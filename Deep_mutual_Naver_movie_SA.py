@@ -60,7 +60,7 @@ class RNN(nn.Module):
         # hidden = [4, batch size, hid dim]
 
         hidden = self.dropout(torch.cat((hidden[-2, :, :], hidden[-1, :, :]), dim=1))
-        # batch_dim x hid_dim*2     히든사이즈 4개의 의미를 알아야 이것을 푼다. 논문 세미나 끝나고ㄱ
+        # batch_dim x hid_dim*2     
 
         return torch.sigmoid(self.fc(hidden))
 
